@@ -68,6 +68,21 @@ Items are delimited with `\n` by default, you can also change the delimiter (use
 ['15\n20']
 ```
 
+You can also wrap a decorate a function with `wrap`, which then runs `fzf` when you call the function:
+
+```python
+from pyfzf import FzfPrompt
+
+fzf = FzfPrompt()
+
+@fzf.wrap("--tac")
+def items(n: int):
+    return range(n)
+
+# prompts you to pick one of the items with fzf
+items(n=50)
+```
+
 License
 -------
 MIT

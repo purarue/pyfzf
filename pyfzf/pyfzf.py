@@ -25,6 +25,7 @@
 import shlex
 import subprocess
 from shutil import which
+from functools import wraps
 from typing import Optional, Sequence, Any, Union, Iterable, List, Iterator
 
 
@@ -161,4 +162,13 @@ class FzfPrompt:
             selection = selected_text.rstrip('\n').split(use_delimiter)
 
         return selection
+
+    def wrap(self, *opt_args, **opt_kwargs):
+        def decorator(func):
+            @wraps(func)
+            def wrapper(*args, **kwargs):
+                items = func(*args, **kwargs)
+                return self.prompt(items, *opt_args, **opt_kwargs)
+            return wrapper
+        return decorator
 
