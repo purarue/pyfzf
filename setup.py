@@ -48,6 +48,8 @@ setup(name='pyfzf',
       install_requires=[],
       py_modules=['pyfzf'],
       packages=['pyfzf'],
+      package_data={'pyfzf': ['py.typed']},
+      python_requires=">=3.6",
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Console',
