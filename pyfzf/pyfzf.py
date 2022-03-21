@@ -60,8 +60,8 @@ class FzfPrompt:
 
     @staticmethod
     def key_to_option(key: str) -> str:
-        if key.startswith('-'):
-            # user passed something like --preview or -x already, dont prepend hyphens
+        if key.startswith('-') or key.startswith("+"):
+            # user passed something like --preview or +x already, dont prepend hyphens
             return key
         else:
             # compute fzf shell option

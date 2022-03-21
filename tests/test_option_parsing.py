@@ -20,6 +20,7 @@ def tests_parsing_options() -> None:
     assert ["-x", "--layout=reverse-list"] == FzfPrompt(D, ["-x", ("layout", "reverse-list")]).options
     assert ["-x", "--marker=\'\"\'"] == FzfPrompt(D, ["-x", ("marker", '"')]).options
     assert ["-x", "-i", "-m", "--tac"] == FzfPrompt(D, ['x', 'i', 'm', '--tac']).options
+    assert ["+x"] == FzfPrompt(D, ['+x']).options
 
     # bad input that gets resolved
     assert [] == FzfPrompt(D, ["", " "]).options
