@@ -1,27 +1,27 @@
-pyfzf
-=====
+# pyfzf
 
-![](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
-![https://pypi.python.org/pypi/pyfzf](https://img.shields.io/pypi/dm/pyfzf.svg?style=flat)
-   
-##### A python wrapper for *junegunn*'s awesome [fzf](https://github.com/junegunn/fzf).
+## Forked Changes:
+
+This doesn't write to a temporary file before prompting, it communicates with the subprocess directly given any iterator, sending lines as they're processed.
+
+It also lets you send any `fzf` CLI options as args/kwargs, or decorate a function which returns an iterator to use as fzf input (see below for examples)
+
+##### A python wrapper for _junegunn_'s [fzf](https://github.com/junegunn/fzf).
 
 ![](https://raw.githubusercontent.com/nk412/pyfzf/master/pyfzf.gif)
 
-Requirements
-------------
+## Requirements
 
-* Python 3.6+
-* [`fzf`](https://github.com/junegunn/fzf)
+- Python 3.6+
+- [`fzf`](https://github.com/junegunn/fzf)
 
-*Note*: `fzf` must be installed and available on PATH.
+_Note_: `fzf` must be installed and available on `$PATH`.
 
-Installation
-------------
-	pip install pyfzf
+## Installation
 
-Usage
------
+    pip install pyfzf_iter
+
+## Usage
 
 ```python
 from pyfzf.pyfzf import FzfPrompt
@@ -82,11 +82,3 @@ def items(n: int):
 # prompts you to pick one of the items with fzf
 items(n=50)
 ```
-
-License
--------
-MIT
-
-Thanks
-------
-@brookite for adding Windows support in v0.3.0
