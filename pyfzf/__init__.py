@@ -104,7 +104,6 @@ class FzfPrompt:
         encoding="utf-8",
         **kwargs: Any,
     ) -> Any:
-
         # combine args/kwargs into fzf options
         opts_raw: List[Any] = list(args)
         for k, v in kwargs.items():

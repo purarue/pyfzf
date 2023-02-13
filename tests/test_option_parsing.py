@@ -4,9 +4,9 @@ from pyfzf import FzfPrompt
 # dummy executable path
 D = sys.executable
 
+
 # make sure options
 def tests_parsing_options() -> None:
-
     assert ["--read0"] == FzfPrompt(D, ("--read0")).options
     assert ["--read0"] == FzfPrompt(D, "read0").options
     assert ["-x"] == FzfPrompt(D, "-x").options
