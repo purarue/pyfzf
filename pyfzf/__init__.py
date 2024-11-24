@@ -103,7 +103,7 @@ class FzfPrompt:
         delimiter: str = "\n",
         encoding="utf-8",
         **kwargs: Any,
-    ) -> Any:
+    ) -> List[str]:
         # combine args/kwargs into fzf options
         opts_raw: List[Any] = list(args)
         for k, v in kwargs.items():
@@ -117,7 +117,7 @@ class FzfPrompt:
         options = " ".join(opts)
 
         selected_text: str = ""
-        selection = []
+        selection: List[str] = []
 
         # spawn a process and send lines one at a time
         # https://stackoverflow.com/a/69397677
