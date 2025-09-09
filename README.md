@@ -12,7 +12,7 @@ It also lets you send any `fzf` CLI options as args/kwargs, or decorate a functi
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.9+
 - [`fzf`](https://github.com/junegunn/fzf)
 
 _Note_: `fzf` must be installed and available on `$PATH`.

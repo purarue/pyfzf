@@ -25,7 +25,7 @@ def main() -> None:
         py_modules=["pyfzf"],
         packages=["pyfzf"],
         package_data={"pyfzf": ["py.typed"]},
-        python_requires=">=3.6",
+        python_requires=">=3.9",
         classifiers=[
             "Environment :: Console",
             "Intended Audience :: Developers",
